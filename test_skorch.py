@@ -1,22 +1,12 @@
-# SKLX
-
-A scikit-learn compatible neural network library that wraps MLX.
-Highly inspired by [skorch](https://github.com/skorch-dev/skorch).
-
-> [!WARNING]
-> This is still under development and non of the following examples actually work.
-
-## Examples
-
-```python
 import numpy as np
 from sklearn.datasets import make_classification
-from mlx import nn
-from sklx import NeuralNetClassifier
+from torch import nn
+from skorch import NeuralNetClassifier
 
 X, y = make_classification(1000, 20, n_informative=10, random_state=0)
 X = X.astype(np.float32)
 y = y.astype(np.int64)
+
 
 class MyModule(nn.Module):
     def __init__(self, num_units=10, nonlin=nn.ReLU()):
@@ -36,6 +26,7 @@ class MyModule(nn.Module):
         X = self.softmax(self.output(X))
         return X
 
+
 net = NeuralNetClassifier(
     MyModule,
     max_epochs=10,
@@ -44,4 +35,3 @@ net = NeuralNetClassifier(
 
 net.fit(X, y)
 y_proba = net.predict_proba(X)
-```
