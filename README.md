@@ -3,7 +3,7 @@
 A scikit-learn compatible neural network library that wraps MLX.
 Highly inspired by [skorch](https://github.com/skorch-dev/skorch).
 
-> [!WARNING]  
+> [!WARNING]
 > This is still under development and non of the following examples actually work.
 
 ## Examples
@@ -40,8 +40,6 @@ net = NeuralNetClassifier(
     MyModule,
     max_epochs=10,
     lr=0.1,
-    # Shuffle training data on each epoch
-    iterator_train__shuffle=True,
 )
 
 net.fit(X, y)
