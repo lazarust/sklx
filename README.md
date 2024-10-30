@@ -3,9 +3,6 @@
 A scikit-learn compatible neural network library that wraps MLX.
 Highly inspired by [skorch](https://github.com/skorch-dev/skorch).
 
-> [!WARNING]
-> This is still under development and non of the following examples actually work.
-
 ## Examples
 
 ```python
