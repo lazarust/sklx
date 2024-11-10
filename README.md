@@ -43,6 +43,21 @@ net.fit(X, y)
 y_proba = net.predict_proba(X)
 ```
 
+In an sklearn Pipeline:
+
+```python
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+
+pipe = Pipeline([
+    ('scale', StandardScaler()),
+    ('net', net),
+])
+
+pipe.fit(X, y)
+y_proba = pipe.predict_proba(X)
+```
+
 ## Future Roadmap
 
 1. Completing Feature Parity with [Skorch](https://github.com/skorch-dev/skorch)
