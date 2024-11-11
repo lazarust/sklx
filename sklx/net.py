@@ -94,4 +94,4 @@ class NeuralNet:
         return list(self.module(core.array(X)).argmax(axis=1))
 
     def predict_proba(self, X):
-        pass
+        return self.predict(X)
