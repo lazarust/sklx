@@ -9,10 +9,6 @@ from sklx.classifier import NeuralNetworkClassifier
 
 
 def create_neural_network_classifier():
-    X, y = make_classification(1000, 20, n_informative=10, random_state=0)
-    X = X.astype(np.float32)
-    y = y.astype(np.int64)
-
     class MyModule(nn.Module):
         def __init__(self, num_units=10, nonlin=nn.ReLU()):
             super().__init__()
@@ -34,14 +30,17 @@ def create_neural_network_classifier():
         MyModule, max_epochs=10, lr=0.1, criterion=losses.nll_loss
     )
 
-    return net, X, y
+    return net
 
 
 def test_neural_network_classifier():
     """
     This is just a simple test to make sure the basic usage works.
     """
-    net, X, y = create_neural_network_classifier()
+    X, y = make_classification(1000, 20, n_informative=10, random_state=0)
+    X = X.astype(np.float32)
+    y = y.astype(np.int64)
+    net = create_neural_network_classifier()
     net.fit(X, y)
     net.predict_proba(X)
 
@@ -50,7 +49,10 @@ def test_sklearn_pipeline_support():
     """
     Test to make sure that using a model in a Sklearn pipeline works.
     """
-    net, X, y = create_neural_network_classifier()
+    X, y = make_classification(1000, 20, n_informative=10, random_state=0)
+    X = X.astype(np.float32)
+    y = y.astype(np.int64)
+    net = create_neural_network_classifier()
 
     pipe = Pipeline(
         [
