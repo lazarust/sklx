@@ -9,17 +9,14 @@ keywords = ["sklx"]
 license = { text = "BSD 3-Clause License" }
 dependencies = [
     "ansi>=0.3.7",
-    "mlx>=0.15.2",
+    "mlx>=0.20.0",
     "numpy>=2.0.0",
     "scikit-learn>=1.5.1",
     "tabulate>=0.9.0",
 ]
 
 [project.optional-dependencies]
-docs = [
-    "mkdocs>=1.6.1",
-    "mkdocs-material>=9.5.42",
-]
+docs = ["mkdocs>=1.6.1", "mkdocs-material>=9.5.42"]
 
 [build-system]
 requires = ["setuptools>=64", "setuptools_scm>=8"]
@@ -44,7 +41,4 @@ replace = '__version__ = "{new_version}"'
 generate-hashes = true
 
 [tool.uv]
-dev-dependencies = [
-    "pytest>=8.3.3",
-    "ruff>=0.7.0",
-]
+dev-dependencies = ["pytest>=8.3.3", "ruff>=0.7.0"]
