@@ -1,7 +1,7 @@
 # SKLX
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Pytest](https://github.com/lazarust/sklx/actions/workflows/pytest.yml/badge.svg)](https://github.com/lazarust/sklx/actions/workflows/pytest.yml)
-[![image](https://img.shields.io/pypi/v/sklx.svg)(https://pypi.org/project/sklx/)]
+[![image](https://img.shields.io/pypi/v/sklx.svg)](https://pypi.org/project/sklx/)
 
 A scikit-learn compatible neural network library that wraps MLX.
 Highly inspired by [skorch](https://github.com/skorch-dev/skorch).
