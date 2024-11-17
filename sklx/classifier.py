@@ -8,6 +8,10 @@ from sklx.net import NeuralNet
 
 
 class NeuralNetworkClassifier(NeuralNet, ClassifierMixin):
+    """
+    Implementation of the NerualNet base class. See `sklx.net.NerualNet` for detailed documentation.
+    """
+
     module = None
     max_epochs = 10
     lr = 0.1
