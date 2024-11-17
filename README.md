@@ -65,10 +65,10 @@ y_proba = pipe.predict_proba(X)
 
 1. Completing Feature Parity with [Skorch](https://github.com/skorch-dev/skorch)
    1. ~Pipeline Support~
-   2. Grid Search Support
-   3. Learning Rate Scheduler
-   4. Scoring
-   5. Early Stopping
-   6. Checkpointing
-   7. Parameter Freezing
-   8. Progress Bar
+   2. Grid Search Support https://github.com/lazarust/sklx/issues/5
+   3. Learning Rate Scheduler https://github.com/lazarust/sklx/issues/6
+   4. Scoring https://github.com/lazarust/sklx/issues/7
+   5. Early Stopping https://github.com/lazarust/sklx/issues/8
+   6. Checkpointing https://github.com/lazarust/sklx/issues/9
+   7. Parameter Freezing https://github.com/lazarust/sklx/issues/10
+   8. Progress Bar https://github.com/lazarust/sklx/issues/11
