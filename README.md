@@ -1,4 +1,4 @@
-# SKLX
+# SKLX [![Pytest](https://github.com/lazarust/sklx/actions/workflows/pytest.yml/badge.svg)](https://github.com/lazarust/sklx/actions/workflows/pytest.yml)
 
 A scikit-learn compatible neural network library that wraps MLX.
 Highly inspired by [skorch](https://github.com/skorch-dev/skorch).
