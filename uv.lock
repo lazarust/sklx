@@ -325,15 +325,17 @@ wheels = [
 
 [[package]]
 name = "mlx"
-version = "0.18.1"
+version = "0.20.0"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/77/45/47000aa36512ff798e1ac0645ab97cef174d9f04c5fd79d937801f004b4a/mlx-0.18.1-cp310-cp310-macosx_13_0_arm64.whl", hash = "sha256:f0d16e0a2ca32f5144ef63072ee8c36827a23d2aa5341f02a8a5043f2ec472b4", size = 22043906 },
-    { url = "https://files.pythonhosted.org/packages/70/2d/bd405dea7da7d3e7331f53034c71dfffdef0f0ca0dae4a8cd2f8bdc634f0/mlx-0.18.1-cp310-cp310-macosx_14_0_arm64.whl", hash = "sha256:bf18f8c1b66a3c445bcd54504b8b29876ef10ff5e80df25cafafba99f6c159aa", size = 21299175 },
-    { url = "https://files.pythonhosted.org/packages/7a/fa/a0ffd8832f543bbf900d79f2165dd67e31d20997697c82253e95a183de7d/mlx-0.18.1-cp311-cp311-macosx_13_0_arm64.whl", hash = "sha256:84903aa50954550ae2273a4c0e6f936c2e8c267450a5eb67b0c20528e64d7221", size = 22044144 },
-    { url = "https://files.pythonhosted.org/packages/fd/75/1471bfdc2a5bf5fd39be3b85c36afb857d18e284e4d7008e149ec0f322f3/mlx-0.18.1-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:023b90eaf54f65a7f118b7b81a5b5b6d5c8ceefa5ac009a0f6524355e4f1e6fb", size = 21299413 },
-    { url = "https://files.pythonhosted.org/packages/56/5f/e11426b47b42dc0313cc91a985b39a3404f8c137160c11a9c40af3547377/mlx-0.18.1-cp312-cp312-macosx_13_0_arm64.whl", hash = "sha256:c594a49a4adb6fa243aa1ef5275ad142a62b0f4febfac1dd747a43390325c11d", size = 22046857 },
-    { url = "https://files.pythonhosted.org/packages/2b/92/23d87d2f249601ad045a04b86413f90560b0da8b26684fbd2afa58754b02/mlx-0.18.1-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:d67b4d818e8172a014c0b3bcee17b938105ec468583be06eb8ca76d89605ed11", size = 21302125 },
+    { url = "https://files.pythonhosted.org/packages/4c/cc/d61f731fe1ed70be3393e6b4e843da3d66d73463eff5ea9c4662638292d1/mlx-0.20.0-cp310-cp310-macosx_13_0_arm64.whl", hash = "sha256:31fb25c159d1cbfbcfe2e4259d8759abde39fe132f03e4b8ffe0c32d5de4c6a8", size = 23775872 },
+    { url = "https://files.pythonhosted.org/packages/33/b6/552ef1c5ead6df528dfdc05ff2386aa43d193d406f1fbc25fcaf5e01dfe4/mlx-0.20.0-cp310-cp310-macosx_14_0_arm64.whl", hash = "sha256:0a289347e32526dfb101ddc1305af645804c2f5fae9e67f4b1ff9f362dbaa919", size = 23533845 },
+    { url = "https://files.pythonhosted.org/packages/6f/46/2b64f9255817c00bdb505f00265f04b429487b1ba81aac31ac22df37db0e/mlx-0.20.0-cp311-cp311-macosx_13_0_arm64.whl", hash = "sha256:8ecf314db6ed2b702f85b20a3f2fc675e4511a1a4ec35b5f83f7db9adb039be4", size = 23776129 },
+    { url = "https://files.pythonhosted.org/packages/b1/21/d390bf05f0c3be2d287bde88d090cc3be8fecc6f8b9a3deeb1a41bcbd009/mlx-0.20.0-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:97e43df023cb379e0c2b94a3a3f3ad92e1e41f69c0dbb9b94a503b28e00866dc", size = 23534033 },
+    { url = "https://files.pythonhosted.org/packages/d0/83/c7ca0b8cd7d1f6a7ed8ca2c4f656d25229bbb760d5437bb643e7a91cc19a/mlx-0.20.0-cp312-cp312-macosx_13_0_arm64.whl", hash = "sha256:d1274409c32e57959986a58199cf393ec7f75f5b01fc2da5928bc4cc76c3042a", size = 23776129 },
+    { url = "https://files.pythonhosted.org/packages/15/16/8148875e9c23cc9c055bc3e72bd9c39e863bda320d9870a283c04babdf87/mlx-0.20.0-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:ad037707762ea0ffe74bcf297d3a349cd151e981930b8465f951fd0fef11d365", size = 23534039 },
+    { url = "https://files.pythonhosted.org/packages/93/07/57feaad207d1ce0d690d255cda0c35b9246911cc24f2f3c0634000ed658f/mlx-0.20.0-cp313-cp313-macosx_13_0_arm64.whl", hash = "sha256:7d6fc39d36464d07fca0469619b01eb08e6dda19610f26bbe03703079c445abf", size = 23776068 },
+    { url = "https://files.pythonhosted.org/packages/ec/b6/cba81e5b0fdd20e752e1863f02ef5579bb733c23794f13c5f549de30f84d/mlx-0.20.0-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:8630277a508c58d70193dc40b87df821f51093f9baa36ee4d8984aad9f0eed91", size = 23533987 },
 ]
 
 [[package]]
@@ -772,7 +774,7 @@ requires-dist = [
     { name = "ansi", specifier = ">=0.3.7" },
     { name = "mkdocs", marker = "extra == 'docs'", specifier = ">=1.6.1" },
     { name = "mkdocs-material", marker = "extra == 'docs'", specifier = ">=9.5.42" },
-    { name = "mlx", specifier = ">=0.15.2" },
+    { name = "mlx", specifier = ">=0.20.0" },
     { name = "numpy", specifier = ">=2.0.0" },
     { name = "scikit-learn", specifier = ">=1.5.1" },
     { name = "tabulate", specifier = ">=0.9.0" },

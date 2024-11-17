@@ -1,4 +1,7 @@
 # SKLX
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Pytest](https://github.com/lazarust/sklx/actions/workflows/pytest.yml/badge.svg)](https://github.com/lazarust/sklx/actions/workflows/pytest.yml)
+[![image](https://img.shields.io/pypi/v/sklx.svg)](https://pypi.org/project/sklx/)
 
 A scikit-learn compatible neural network library that wraps MLX.
 Highly inspired by [skorch](https://github.com/skorch-dev/skorch).
@@ -43,10 +46,25 @@ net.fit(X, y)
 y_proba = net.predict_proba(X)
 ```
 
+In an sklearn Pipeline:
+
+```python
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+
+pipe = Pipeline([
+    ('scale', StandardScaler()),
+    ('net', net),
+])
+
+pipe.fit(X, y)
+y_proba = pipe.predict_proba(X)
+```
+
 ## Future Roadmap
 
 1. Completing Feature Parity with [Skorch](https://github.com/skorch-dev/skorch)
-   1. Pipeline Support
+   1. ~Pipeline Support~
    2. Grid Search Support
    3. Learning Rate Scheduler
    4. Scoring
