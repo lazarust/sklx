@@ -4,6 +4,7 @@ on: push
 
 jobs:
   tests:
+    name: Pytest
     runs-on: macos-14
 
     steps:
@@ -17,4 +18,4 @@ jobs:
       - name: Install the project
         run: uv sync --all-extras --dev
       - name: Run tests
-        run: uv run pytest tests
+        run: uv run pytest
