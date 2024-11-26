@@ -1,11 +1,16 @@
 import numpy as np
+import pytest
 from mlx import nn
 from mlx.nn import losses
 from sklearn.datasets import make_classification
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-import pytest
+
 from sklx.classifier import NeuralNetworkClassifier
+
+
+def test_run():
+    print("Test")
 
 
 class TestNeuralNetworkClassifier:

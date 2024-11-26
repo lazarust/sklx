@@ -2,6 +2,9 @@ site_name: SKLX Docs
 
 theme:
   name: material
+  features:
+    - navigation.sections
+
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -27,3 +30,10 @@ theme:
 plugins:
   - search
   - mkdocstrings
+
+nav:
+  - "index.md"
+  - "installation.md"
+  - "roadmap.md"
+  - Modules:
+      - "modules/classifiers.md"
