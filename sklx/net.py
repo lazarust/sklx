@@ -9,6 +9,10 @@ from tabulate import tabulate
 
 
 class NeuralNet:
+    """
+    Base Nerual Net class that handles training and predictions.
+    """
+
     def __init__(
         self,
         module: nn.Module,

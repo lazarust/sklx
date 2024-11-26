@@ -16,7 +16,11 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-docs = ["mkdocs>=1.6.1", "mkdocs-material>=9.5.42"]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.5.42",
+    "mkdocstrings[python]>=0.27.0",
+]
 
 [build-system]
 requires = ["setuptools>=64", "setuptools_scm>=8"]
