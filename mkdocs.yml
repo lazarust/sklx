@@ -1,6 +1,8 @@
 site_name: SKLX Docs
 
 theme:
+  logo: images/icon.png
+  favicon: images/icon.png
   name: material
   features:
     - navigation.sections
@@ -28,12 +30,13 @@ theme:
         name: Switch to system preference
 
 plugins:
-  - search
   - mkdocstrings
+  - search
 
 nav:
   - "index.md"
   - "installation.md"
   - "roadmap.md"
+  - "changelog.md"
   - Modules:
       - "modules/classifiers.md"
