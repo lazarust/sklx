@@ -1,7 +1,12 @@
 site_name: SKLX Docs
 
 theme:
+  logo: images/icon.png
+  favicon: images/icon.png
   name: material
+  features:
+    - navigation.sections
+
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -23,3 +28,15 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
+
+plugins:
+  - mkdocstrings
+  - search
+
+nav:
+  - "index.md"
+  - "installation.md"
+  - "roadmap.md"
+  - "changelog.md"
+  - Modules:
+      - "modules/classifiers.md"
