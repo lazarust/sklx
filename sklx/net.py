@@ -5,10 +5,11 @@ import mlx.nn as nn
 import mlx.optimizers.optimizers as optimizers
 import numpy as np
 from sklearn.model_selection import train_test_split
+from sklearn.base import BaseEstimator
 from tabulate import tabulate
 
 
-class NeuralNet:
+class NeuralNet(BaseEstimator):
     """
     Base Nerual Net class that handles training and predictions.
     """
@@ -46,13 +47,6 @@ class NeuralNet:
 
         raw_X, X_test, raw_y, y_test = train_test_split(raw_X, raw_y)
 
-        headers = [
-            "epoch",
-            "train_loss",
-            "valid_acc",
-            "valid_loss",
-            "dur",
-        ]
         metrics_list = []
 
         for epoch in range(1, self.max_epochs + 1):
@@ -69,7 +63,6 @@ class NeuralNet:
                 batch_losses.append(loss)
 
             avg_loss = np.mean(batch_losses)
-
             score = self.score(X_test, y_test)
             valid_scores.append(score)
 
@@ -91,6 +84,13 @@ class NeuralNet:
 
             core.eval(self.module.parameters(), self.optimizer.state)
 
+        headers = [
+            "epoch",
+            "train_loss",
+            "valid_acc",
+            "valid_loss",
+            "dur",
+        ]
         print(tabulate(metrics_list, headers=headers))
         self.module.train(mode=False)
 
@@ -99,3 +99,6 @@ class NeuralNet:
 
     def predict_proba(self, X):
         return self.predict(X)
+
+    def set_params(self, **kwargs):
+        super().set_params(**kwargs)

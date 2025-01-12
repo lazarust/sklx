@@ -8,9 +8,7 @@ from sklearn.preprocessing import StandardScaler
 
 from sklx.classifier import NeuralNetworkClassifier
 
-
-def test_run():
-    print("Test")
+from sklearn.model_selection import GridSearchCV
 
 
 class TestNeuralNetworkClassifier:
@@ -67,3 +65,32 @@ class TestNeuralNetworkClassifier:
 
         pipe.fit(X, y)
         pipe.predict_proba(X)
+
+    def test_sklearn_grid_search_support(self, nerual_network_classifier):
+        """
+        Test to make sure that using a model with Sklearn Grid Search works.
+        """
+        X, y = make_classification(1000, 20, n_informative=10, random_state=0)
+        X = X.astype(np.float32)
+        y = y.astype(np.int64)
+
+        nerual_network_classifier.set_params(train_split=False, verbose=0)
+        params = {
+            "lr": [0.01, 0.02],
+            "max_epochs": [10, 20],
+            "module__num_units": [10, 20],
+        }
+        gs = GridSearchCV(
+            nerual_network_classifier,
+            params,
+            refit=False,
+            cv=3,
+            scoring="accuracy",
+            verbose=2,
+        )
+        gs.fit(X, y)
+        print(
+            "best score: {:.3f}, best params: {}".format(
+                gs.best_score_, gs.best_params_
+            )
+        )
