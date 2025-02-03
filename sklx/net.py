@@ -20,8 +20,9 @@ class NeuralNet(BaseEstimator):
         criterion,
         optimizer=optimizers.SGD,
         lr=0.1,
-        max_epochs=10,
+        max_epochs=10.0,
         batch_size=128,
+        **kwargs,
     ) -> None:
         self.module = module
         self.criterion = criterion
@@ -29,6 +30,7 @@ class NeuralNet(BaseEstimator):
         self.lr = lr
         self.batch_size = batch_size
         self.max_epochs = max_epochs
+        super().__init__(**kwargs)
 
     def batch_iterate(self, batch_size, X, y):
         perm = core.array(np.random.permutation(y.size))
@@ -99,6 +101,3 @@ class NeuralNet(BaseEstimator):
 
     def predict_proba(self, X):
         return self.predict(X)
-
-    def set_params(self, **kwargs):
-        super().set_params(**kwargs)
