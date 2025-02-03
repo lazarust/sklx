@@ -7,7 +7,7 @@ from sklearn.base import ClassifierMixin
 from sklx.net import NeuralNet
 
 
-class NeuralNetworkClassifier(NeuralNet, ClassifierMixin):
+class NeuralNetworkClassifier(ClassifierMixin, NeuralNet):
     """
     Implementation of the NerualNet base class. See `sklx.net.NerualNet` for detailed documentation.
     """
@@ -25,11 +25,6 @@ class NeuralNetworkClassifier(NeuralNet, ClassifierMixin):
         lr: float,
         criterion: Callable,
     ) -> None:
-        self.module = module
-        self.max_epochs = max_epochs
-        self.lr = lr
-        self.criterion = criterion
-        self.optimizer = optimizers.SGD(learning_rate=lr)
-
-    def fit(self, raw_X, raw_y, **kwargs):
-        return super().fit(raw_X, raw_y, **kwargs)
+        super().__init__(
+            module=module, criterion=criterion, lr=lr, max_epochs=max_epochs
+        )

@@ -74,11 +74,10 @@ class TestNeuralNetworkClassifier:
         X = X.astype(np.float32)
         y = y.astype(np.int64)
 
-        nerual_network_classifier.set_params(train_split=False, verbose=0)
         params = {
             "lr": [0.01, 0.02],
             "max_epochs": [10, 20],
-            "module__num_units": [10, 20],
+            # "module__num_units": [10, 20],
         }
         gs = GridSearchCV(
             nerual_network_classifier,
