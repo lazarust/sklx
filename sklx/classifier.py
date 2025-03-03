@@ -1,6 +1,7 @@
 from typing import Callable
 
 import mlx.optimizers.optimizers as optimizers
+import numpy as np
 from mlx import nn
 from sklearn.base import ClassifierMixin
 
@@ -24,7 +25,13 @@ class NeuralNetworkClassifier(ClassifierMixin, NeuralNet):
         max_epochs: float,
         lr: float,
         criterion: Callable,
+        classes=None,
     ) -> None:
         super().__init__(
             module=module, criterion=criterion, lr=lr, max_epochs=max_epochs
         )
+        self.classes = classes
+
+    @property
+    def classes_(self):
+        return np.array(self.classes)

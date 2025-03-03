@@ -4,8 +4,8 @@ import mlx.core as core
 import mlx.nn as nn
 import mlx.optimizers.optimizers as optimizers
 import numpy as np
-from sklearn.model_selection import train_test_split
 from sklearn.base import BaseEstimator
+from sklearn.model_selection import train_test_split
 from tabulate import tabulate
 
 
@@ -101,3 +101,13 @@ class NeuralNet(BaseEstimator):
 
     def predict_proba(self, X):
         return self.predict(X)
+
+    def set_params(self, **kwargs):
+        normal_params = {}
+        for key, value in kwargs.items():
+            if "__" in key:
+                setattr(self, key, value)
+            else:
+                normal_params[key] = value
+
+        return super().set_params(**normal_params)
