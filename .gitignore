@@ -163,3 +163,5 @@ cython_debug/
 
 # Ignoring this file since it's mainly used for local development using Zed
 pyrightconfig.json
+
+.DS_Store
