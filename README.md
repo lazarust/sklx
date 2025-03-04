@@ -61,11 +61,27 @@ pipe.fit(X, y)
 y_proba = pipe.predict_proba(X)
 ```
 
+With grid search:
+
+```python
+from sklearn.model_selection import GridSearchCV
+
+params = {
+    'lr': [0.01, 0.02],
+    'max_epochs': [10, 20],
+    'module__num_units': [10, 20],
+}
+gs = GridSearchCV(net, params, refit=False, cv=3, scoring='accuracy', verbose=2)
+
+gs.fit(X, y)
+print("best score: {:.3f}, best params: {}".format(gs.best_score_, gs.best_params_))
+```
+
 ## Future Roadmap
 
 1. Completing Feature Parity with [Skorch](https://github.com/skorch-dev/skorch)
    1. ~Pipeline Support~
-   2. Grid Search Support https://github.com/lazarust/sklx/issues/5
+   2. ~Grid Search Support~
    3. Learning Rate Scheduler https://github.com/lazarust/sklx/issues/6
    4. Scoring https://github.com/lazarust/sklx/issues/7
    5. Early Stopping https://github.com/lazarust/sklx/issues/8
