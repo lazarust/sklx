@@ -4,11 +4,12 @@ import mlx.core as core
 import mlx.nn as nn
 import mlx.optimizers.optimizers as optimizers
 import numpy as np
+from sklearn.base import BaseEstimator
 from sklearn.model_selection import train_test_split
 from tabulate import tabulate
 
 
-class NeuralNet:
+class NeuralNet(BaseEstimator):
     """
     Base Nerual Net class that handles training and predictions.
     """
@@ -19,8 +20,9 @@ class NeuralNet:
         criterion,
         optimizer=optimizers.SGD,
         lr=0.1,
-        max_epochs=10,
+        max_epochs=10.0,
         batch_size=128,
+        **kwargs,
     ) -> None:
         self.module = module
         self.criterion = criterion
@@ -28,6 +30,7 @@ class NeuralNet:
         self.lr = lr
         self.batch_size = batch_size
         self.max_epochs = max_epochs
+        super().__init__(**kwargs)
 
     def batch_iterate(self, batch_size, X, y):
         perm = core.array(np.random.permutation(y.size))
@@ -46,13 +49,6 @@ class NeuralNet:
 
         raw_X, X_test, raw_y, y_test = train_test_split(raw_X, raw_y)
 
-        headers = [
-            "epoch",
-            "train_loss",
-            "valid_acc",
-            "valid_loss",
-            "dur",
-        ]
         metrics_list = []
 
         for epoch in range(1, self.max_epochs + 1):
@@ -69,7 +65,6 @@ class NeuralNet:
                 batch_losses.append(loss)
 
             avg_loss = np.mean(batch_losses)
-
             score = self.score(X_test, y_test)
             valid_scores.append(score)
 
@@ -91,6 +86,13 @@ class NeuralNet:
 
             core.eval(self.module.parameters(), self.optimizer.state)
 
+        headers = [
+            "epoch",
+            "train_loss",
+            "valid_acc",
+            "valid_loss",
+            "dur",
+        ]
         print(tabulate(metrics_list, headers=headers))
         self.module.train(mode=False)
 
@@ -99,3 +101,13 @@ class NeuralNet:
 
     def predict_proba(self, X):
         return self.predict(X)
+
+    def set_params(self, **kwargs):
+        normal_params = {}
+        for key, value in kwargs.items():
+            if "__" in key:
+                setattr(self, key, value)
+            else:
+                normal_params[key] = value
+
+        return super().set_params(**normal_params)

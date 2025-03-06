@@ -3,14 +3,11 @@ import pytest
 from mlx import nn
 from mlx.nn import losses
 from sklearn.datasets import make_classification
+from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 from sklx.classifier import NeuralNetworkClassifier
-
-
-def test_run():
-    print("Test")
 
 
 class TestNeuralNetworkClassifier:
@@ -67,3 +64,28 @@ class TestNeuralNetworkClassifier:
 
         pipe.fit(X, y)
         pipe.predict_proba(X)
+        assert pipe.score(X, y) > 0.6
+
+    def test_sklearn_grid_search_support(self, nerual_network_classifier):
+        """
+        Test to make sure that using a model with Sklearn Grid Search works.
+        """
+        X, y = make_classification(1000, 20, n_informative=10, random_state=0)
+        X = X.astype(np.float32)
+        y = y.astype(np.int64)
+
+        params = {
+            "lr": [0.01, 0.03],
+            "max_epochs": [10, 30],
+            "module__num_units": [10, 30],
+        }
+        gs = GridSearchCV(
+            nerual_network_classifier,
+            params,
+            refit=False,
+            cv=3,
+            scoring="accuracy",
+            verbose=2,
+        )
+        gs.fit(X, y)
+        assert gs.best_score_ > 0.75

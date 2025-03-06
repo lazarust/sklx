@@ -1,13 +1,14 @@
 from typing import Callable
 
 import mlx.optimizers.optimizers as optimizers
+import numpy as np
 from mlx import nn
 from sklearn.base import ClassifierMixin
 
 from sklx.net import NeuralNet
 
 
-class NeuralNetworkClassifier(NeuralNet, ClassifierMixin):
+class NeuralNetworkClassifier(ClassifierMixin, NeuralNet):
     """
     Implementation of the NerualNet base class. See `sklx.net.NerualNet` for detailed documentation.
     """
@@ -24,12 +25,13 @@ class NeuralNetworkClassifier(NeuralNet, ClassifierMixin):
         max_epochs: float,
         lr: float,
         criterion: Callable,
+        classes=None,
     ) -> None:
-        self.module = module
-        self.max_epochs = max_epochs
-        self.lr = lr
-        self.criterion = criterion
-        self.optimizer = optimizers.SGD(learning_rate=lr)
+        super().__init__(
+            module=module, criterion=criterion, lr=lr, max_epochs=max_epochs
+        )
+        self.classes = classes
 
-    def fit(self, raw_X, raw_y, **kwargs):
-        return super().fit(raw_X, raw_y, **kwargs)
+    @property
+    def classes_(self):
+        return np.array(self.classes)
