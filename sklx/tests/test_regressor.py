@@ -52,6 +52,4 @@ class TestNueralNetRegressor:
         y_regr = y_regr.reshape(-1, 1)
 
         nerual_network_regressor.fit(X_regr, y_regr)
-
-        y_pred = nerual_network_regressor.predict(X_regr[:5])
-        print(y_pred)
+        nerual_network_regressor.predict(X_regr)
