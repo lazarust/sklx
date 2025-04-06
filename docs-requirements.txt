@@ -118,9 +118,7 @@ charset-normalizer==3.4.0 \
 click==8.1.7 \
     --hash=sha256:ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28 \
     --hash=sha256:ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de
-    # via
-    #   mkdocs
-    #   mkdocstrings
+    # via mkdocs
 colorama==0.4.6 \
     --hash=sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44 \
     --hash=sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6
@@ -236,9 +234,9 @@ mkdocs==1.6.1 \
     #   mkdocs-autorefs
     #   mkdocs-material
     #   mkdocstrings
-mkdocs-autorefs==1.2.0 \
-    --hash=sha256:a86b93abff653521bda71cf3fc5596342b7a23982093915cb74273f67522190f \
-    --hash=sha256:d588754ae89bd0ced0c70c06f58566a4ee43471eeeee5202427da7de9ef85a2f
+mkdocs-autorefs==1.4.1 \
+    --hash=sha256:4b5b6235a4becb2b10425c2fa191737e415b37aa3418919db33e5d774c9db079 \
+    --hash=sha256:9793c5ac06a6ebbe52ec0f8439256e66187badf4b5334b5fde0b128ec134df4f
     # via
     #   mkdocstrings
     #   mkdocstrings-python
@@ -254,15 +252,15 @@ mkdocs-material-extensions==1.3.1 \
     --hash=sha256:10c9511cea88f568257f960358a467d12b970e1f7b2c0e5fb2bb48cab1928443 \
     --hash=sha256:adff8b62700b25cb77b53358dad940f3ef973dd6db797907c49e3c2ef3ab4e31
     # via mkdocs-material
-mkdocstrings[python]==0.27.0 \
-    --hash=sha256:16adca6d6b0a1f9e0c07ff0b02ced8e16f228a9d65a37c063ec4c14d7b76a657 \
-    --hash=sha256:6ceaa7ea830770959b55a16203ac63da24badd71325b96af950e59fd37366332
+mkdocstrings[python]==0.29.1 \
+    --hash=sha256:37a9736134934eea89cbd055a513d40a020d87dfcae9e3052c2a6b8cd4af09b6 \
+    --hash=sha256:8722f8f8c5cd75da56671e0a0c1bbed1df9946c0cef74794d6141b34011abd42
     # via
     #   -r docs-requirements.in
     #   mkdocstrings-python
-mkdocstrings-python==1.12.2 \
-    --hash=sha256:7a1760941c0b52a2cd87b960a9e21112ffe52e7df9d0b9583d04d47ed2e186f3 \
-    --hash=sha256:7f7d40d6db3cb1f5d19dbcd80e3efe4d0ba32b073272c0c0de9de2e604eda62a
+mkdocstrings-python==1.16.7 \
+    --hash=sha256:a5589a5be247a28ba651287f83630c69524042f8055d93b5c203d804a3409333 \
+    --hash=sha256:cdfc1a99fe5f6f0d90446a364ef7cac12014a4ef46114b2677a58cec84007117
     # via mkdocstrings
 packaging==24.1 \
     --hash=sha256:026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002 \
@@ -279,9 +277,7 @@ pathspec==0.12.1 \
 platformdirs==4.3.6 \
     --hash=sha256:357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907 \
     --hash=sha256:73e575e1408ab8103900836b97580d5307456908a03e92031bab39e4554cc3fb
-    # via
-    #   mkdocs-get-deps
-    #   mkdocstrings
+    # via mkdocs-get-deps
 pygments==2.18.0 \
     --hash=sha256:786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199 \
     --hash=sha256:b8e6aca0523f3ab76fee51799c488e38782ac06eafcf95e7ba832985c8e7b13a
@@ -463,6 +459,10 @@ six==1.16.0 \
     --hash=sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926 \
     --hash=sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254
     # via python-dateutil
+typing-extensions==4.13.1 \
+    --hash=sha256:4b6cf02909eb5495cfbc3f6e8fd49217e6cc7944e145cdda8caa3734777f9e69 \
+    --hash=sha256:98795af00fb9640edec5b8e31fc647597b4691f099ad75f469a2616be1a76dff
+    # via mkdocstrings-python
 urllib3==2.2.3 \
     --hash=sha256:ca899ca043dcb1bafa3e262d73aa25c465bfb49e0bd9dd5d59f1d0acba2f8fac \
     --hash=sha256:e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9
