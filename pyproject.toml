@@ -1,6 +1,6 @@
 [project]
 name = "sklx"
-version = "0.0.2"
+version = "0.0.5"
 description = "A scikit-learn compatible neural network library that wraps MLX."
 readme = "README.md"
 requires-python = ">=3.10"
