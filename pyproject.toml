@@ -4,7 +4,6 @@ version = "0.0.10"
 description = "A scikit-learn compatible neural network library that wraps MLX."
 readme = "README.md"
 requires-python = ">=3.10"
-exclude-newer = "7 days"
 keywords = ["sklx"]
 
 license = { text = "BSD 3-Clause License" }
@@ -20,6 +19,9 @@ dependencies = [
 [dependency-groups]
 dev = ["pytest>=8.3.3", "ruff>=0.7.0"]
 
+[tool.uv]
+exclude-newer = "7 days"
+
 [project.optional-dependencies]
 docs = [
     "mkdocs>=1.6.1",
@@ -32,7 +34,7 @@ requires = ["setuptools>=64", "setuptools_scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [tool.bumpversion]
-current_version = "0.0.1"
+current_version = "0.0.10"
 commit = true
 tag = true
 
